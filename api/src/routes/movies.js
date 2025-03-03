@@ -1,7 +1,7 @@
 import express from "express";
-import { getMoviesWithActorsAndGenres } from "../controllers/getMoviesWithActorsAndGenres.js";
+import { getMoviesWithGenreAndActors } from "../controllers/getMoviesWithGenreAndActors.js";
 
 export const moviesRouter = express.Router().get("/", async (req, res) => {
-  const movies = await getMoviesWithActorsAndGenres();
+  const movies = await getMoviesWithGenreAndActors();
   res.json(movies);
 });
