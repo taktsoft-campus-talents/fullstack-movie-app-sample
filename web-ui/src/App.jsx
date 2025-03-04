@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("/api/movies");
+        const response = await fetch("/api/movies/with-genre-and-actors");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
