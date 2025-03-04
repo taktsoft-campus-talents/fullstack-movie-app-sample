@@ -14,4 +14,5 @@ fi
 # curl http://localhost:3000/api/movies/1 | jq
 # curl http://localhost:3000/api/actors/1 | jq
 # curl http://localhost:3000/api/actors/2 | jq
+# curl http://localhost:3000/api/genres | jq
 # curl http://localhost:3000/api/movies/with-genre-and-actors | jq
