@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Rating } from "./Rating";
+import { DisplayChildren } from "./DisplayChildren";
 
 export function Movies() {
   const [movies, setMovies] = useState([]);
@@ -67,6 +69,10 @@ export function Movies() {
     return <p>Error: {errorActors.message}</p>;
   }
 
+  const actorsDisplay = actors
+    ? actors.map((actor) => actor.actorname).join(", ")
+    : "";
+
   return (
     <div>
       <ul>
@@ -80,11 +86,12 @@ export function Movies() {
           </li>
         ))}
       </ul>
-      <div>
-        {actors ? (
-          <p>Actors: {actors.map((actor) => actor.actorname).join(", ")}</p>
-        ) : null}
-      </div>
+      <DisplayChildren condition={!!actors}>
+        <p>Actors: {actorsDisplay}</p>
+      </DisplayChildren>
+      <DisplayChildren condition={selectedMovieId >= 0}>
+        <Rating movieId={selectedMovieId} />
+      </DisplayChildren>
     </div>
   );
 }

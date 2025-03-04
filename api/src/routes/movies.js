@@ -5,12 +5,12 @@ import { getMovieById } from "../controllers/getMovieById.js";
 
 export const moviesRouter = express.Router();
 
-moviesRouter.get("/", async (req, res) => {
+moviesRouter.get("/", async (_, res) => {
   const movies = await getAllMovies();
   res.json(movies);
 });
 
-moviesRouter.get("/with-genre-and-actors", async (req, res) => {
+moviesRouter.get("/with-genre-and-actors", async (_, res) => {
   const movies = await getMoviesWithGenreAndActors();
   res.json(movies);
 });

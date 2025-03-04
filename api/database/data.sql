@@ -5,12 +5,12 @@ INSERT INTO genres (name) VALUES
 ('Comedy'),
 ('Horror');
 
-INSERT INTO movies (movieTitle, genre_id) VALUES
-('Inception', 3),           -- Sci-Fi
-('Titanic', 2),             -- Drama
-('The Dark Knight', 1),     -- Action
-('The Matrix', 3),          -- Sci-Fi
-('It', 5);                  -- Horror
+INSERT INTO movies (movieTitle, genre_id, rating) VALUES
+('Inception', 3, 0),           -- Sci-Fi
+('Titanic', 2, 0),             -- Drama
+('The Dark Knight', 1, 0),     -- Action
+('The Matrix', 3, 0),          -- Sci-Fi
+('It', 5, 0);                  -- Horror
 
 INSERT INTO actors (actorName) VALUES
 ('Leonardo DiCaprio'),

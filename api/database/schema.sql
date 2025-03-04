@@ -12,7 +12,8 @@ CREATE TABLE movies (
     id SERIAL PRIMARY KEY,
     movieTitle VARCHAR(255) NOT NULL,
     genre_id INT NOT NULL,
-    FOREIGN KEY (genre_id) REFERENCES genres(id)
+    FOREIGN KEY (genre_id) REFERENCES genres(id),
+    rating integer
 );
 
 CREATE TABLE actors (

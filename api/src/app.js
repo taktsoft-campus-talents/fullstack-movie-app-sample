@@ -1,6 +1,7 @@
 import express, { json } from "express";
 import { moviesRouter } from "./routes/movies.js";
 import { actorsRouter } from "./routes/actors.js";
+import { ratingRouter } from "./routes/rating.js";
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use((req, _, next) => {
 
 app.use("/api/movies", moviesRouter);
 app.use("/api/actors", actorsRouter);
+app.use("/api/rating", ratingRouter);
 
 app.use((_, res) => {
   res.status(404).json({ error: "Not found" });
