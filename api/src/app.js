@@ -6,7 +6,7 @@ const app = express();
 
 app.use(json());
 
-app.use((req, res, next) => {
+app.use((req, _, next) => {
   console.debug(`${req.method} ${req.url}`);
   next();
 });
@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 app.use("/api/movies", moviesRouter);
 app.use("/api/actors", actorsRouter);
 
-app.use((req, res) => {
+app.use((_, res) => {
   res.status(404).json({ error: "Not found" });
 });
 
